@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment 02 - Concert Purchase Checker</title>
+
+    <!-- Reusing Assignment 01 design and style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to Content</a>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🎟️</span>
+        <h1>Assignment 02 - Ticket Price Checker</h1>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#user">User</a></li>
+          <li><a href="#concert">Concert</a></li>
+          <li><a href="#processing">Processing</a></li>
+          <li><a href="#results">Results</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="wrapper">
+      <!-- Intro: h2 name, as per requirement, and p for user name-->
+      <section id="intro" class="card">
+        <h2 id="user-heading"></h2>
+        <p id="user-quote" class="note"></p>
+      </section>
+
+      <!-- User Data fields to be displayed below-->
+      <section id="user" class="card">
+        <h3>User Data</h3>
+        <ul id="user-data" class="data-list"></ul>
+      </section>
+
+      <!-- Concert Data fields as per requirements -->
+      <section id="concert" class="card">
+        <h3>Concert Data</h3>
+        <ul id="concert-data" class="data-list"></ul>
+      </section>
+
+      <!-- Processing user information and purchase fields-->
+      <section id="processing" class="card">
+        <h3>Processing Purchase</h3>
+        <ul id="processing-list" class="data-list"></ul>
+      </section>
+
+      <!-- Results section -->
+      <section id="results" class="card">
+        <h3>Results</h3>
+        <div id="results-messages"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Fellipe Scirea - COMP2132 - Assignment 02</p>
+    </footer>
+
+    <!-- Script loading section -->
+    <script src="./js/comp2132-assignment02.js" defer></script>
+    <script src="./js/myAssignment02.js" defer></script>
+  </body>
+</html>
