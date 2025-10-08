@@ -1,3 +1,10 @@
+/**
+ * @ Author: Fellipe M Fumagali Scirea
+ * @ BCIT Student # : A01181350
+ * @ Create Time: 2025-10-06
+ * @ COMP 2132 - Assignment 03- Arrays and Loops
+ */
+
 /* CSS: Responsive grid layout + typography + other details for assignment*/
 :root {
   --bg: #0f172a;
@@ -25,13 +32,26 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
-  background: radial-gradient(
-      1200px 800px at 10% -10%,
-      #1f2937 0%,
-      var(--bg) 45%
-    )
-    no-repeat fixed;
+  background: var(--bg);
   line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Background gradient overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    1200px 800px at 10% -10%,
+    #1f2937 0%,
+    transparent 45%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Accessibility */
@@ -231,7 +251,7 @@ figure {
   }
 }
 
-/* Assignment 02 Data Lists Styling*/
+/* Assignment 02 & 03 Data Lists Styling*/
 .data-list {
   list-style: none;
   margin: 0;
@@ -250,4 +270,179 @@ figure {
   border: 1px solid rgba(255, 0, 0, 0.35);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
+}
+
+/* ============================================
+   ASSIGNMENT 03 SPECIFIC STYLES
+   ============================================ */
+
+/* Student list styling */
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.student-list li {
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem 0;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 0.5rem;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.student-list li:hover {
+  transform: translateX(4px);
+  background: rgba(96, 165, 250, 0.15);
+}
+
+.student-list li.target-found {
+  background: rgba(34, 197, 94, 0.25);
+  border: 2px solid rgba(34, 197, 94, 0.6);
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+}
+
+/* Result messages */
+.result-success {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid rgba(34, 197, 94, 0.5);
+}
+
+.result-warning {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(251, 146, 60, 0.15);
+  border: 2px solid rgba(251, 146, 60, 0.5);
+}
+
+/* Number list styling */
+.number-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.number-list li {
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.number-list li:hover {
+  transform: scale(1.05);
+  background: rgba(96, 165, 250, 0.25);
+}
+
+.calculation-results {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 1rem;
+  background: rgba(96, 165, 250, 0.05);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.calculation-results p {
+  margin: 0.5rem 0;
+}
+
+/* Count section styling */
+.count-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(96, 165, 250, 0.08);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  transition: border 200ms ease, background 200ms ease;
+}
+
+.count-section:hover {
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.count-section h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.count-section p {
+  margin: 0.5rem 0;
+}
+
+.count-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.count-list li {
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.count-list li:hover {
+  transform: scale(1.05);
+  background: rgba(96, 165, 250, 0.25);
+}
+
+.count-list li.zero-reached {
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  font-weight: 600;
+}
+
+/* Responsive adjustments for Assignment 03 */
+@media (max-width: 1280px) {
+  /* Single column layout for screens 13" and smaller */
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  #intro,
+  #user,
+  #concert,
+  #processing,
+  #results {
+    grid-column: 1;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* Two columns for larger screens */
+  .wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* First two sections in two columns */
+  #user {
+    grid-column: 1;
+  }
+
+  #concert {
+    grid-column: 2;
+  }
+
+  /* Processing section spans full width */
+  #processing {
+    grid-column: 1 / -1;
+  }
 }
