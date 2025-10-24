@@ -1,0 +1,85 @@
+/**
+ * @ Author: Fellipe M Fumagali Scirea
+ * @ BCIT Student # : A01181350
+ * @ Created: 10-22-2025
+ * @ Description: COMP 2132 - Deliverable as part of coursework.
+ * @ Layout CSS file: Page layout styling.
+ */
+
+/* layout.css */
+
+/* -- Header & nav layout (no colors/typography here) -- */
+@layer layout {
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem clamp(1rem, 4vw, 2rem);
+    border-bottom: 1px solid #1f2937;
+    backdrop-filter: blur(2px);
+  }
+
+  /* cap and center header on wide screens */
+  @media (min-width: 1200px) {
+    .site-header {
+      max-width: var(--max-line);
+      margin-inline: auto;
+    }
+  }
+
+  /* brand block aligns icon + title horizontally */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* primary nav list is a horizontal row */
+  .site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  /* -- Main content grid --
+   default: single column (mobile/tablet/desktop < 1200px)
+   >=1200px: two centered columns; natural pairing 1–2, 3–4, 5–6
+*/
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: clamp(1rem, 4vw, 2rem);
+    max-width: var(--max-line);
+    margin-inline: auto; /* centers the content area */
+  }
+
+  @media (min-width: 1200px) {
+    main {
+      grid-template-columns: repeat(2, minmax(28rem, 1fr));
+      justify-content: center; /* center the two-column block */
+      gap: 1.25rem;
+    }
+  }
+
+  /* Optional helper for any section that should span both columns on wide screens
+   (not used by default)
+   .part--full { grid-column: 1 / -1; }
+*/
+
+  /* -- Footer layout -- */
+  .site-footer {
+    max-width: var(--max-line);
+    margin: 2rem auto;
+    padding: 0 2rem 2rem;
+    text-align: center;
+  }
+
+  /* Ensure parts in the same grid row share equal height */
+  main {
+    align-items: stretch;
+  }
+}
