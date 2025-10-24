@@ -8,6 +8,7 @@
 
 /* base.css */
 
+@layer base, layout, components; /* declare cascade order */
 @layer base {
   :root {
     --bg: #0f172a;
@@ -18,7 +19,7 @@
     --accent: #60a5fa;
     --ring: #93c5fd;
     --max-line: 1000px;
-    --line: #1f2937;
+    --line: #1f2937; /* used in layout */
   }
 
   *,
@@ -26,9 +27,11 @@
   *::after {
     box-sizing: border-box;
   }
+
   html {
     scroll-behavior: smooth;
   }
+
   body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
@@ -71,5 +74,37 @@
     color: #0b1220;
     border-radius: 0.5rem;
     outline: none;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  @layer base {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+    * {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Tiny print rules */
+@media print {
+  @layer base {
+    body {
+      background: #fff;
+      color: #000;
+    }
+    .site-header,
+    .site-nav,
+    .site-footer {
+      display: none;
+    }
+    a::after {
+      content: " (" attr(href) ")";
+      font-size: 0.9em;
+    }
   }
 }

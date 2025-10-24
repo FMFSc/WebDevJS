@@ -8,6 +8,8 @@
 
 /* components.css */
 
+@layer base, layout, components;
+
 @layer components {
   /* header brand typography */
   .brand .logo {
