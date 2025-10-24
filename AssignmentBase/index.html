@@ -30,11 +30,6 @@
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/layout.css" />
-
-    <!-- Scripts -->
-    <script src="./js/main.js" defer></script>
-    <script src="./js/domUtils.js" defer></script>
-    <script src="./js/renderers/part.js" defer></script>
   </head>
 
   <body>
@@ -43,20 +38,61 @@
         <span class="logo" aria-hidden="true">👋</span>
         <h1 id="main-title">COMP 2132 Weekly Assignment</h1>
       </div>
-      <nav class="site-nav" arial-label="Primary">
+      <nav class="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="#part1">Part1</a></li>
-          <li><a href="#part2">Part2</a></li>
-          <li><a href="#part3">Part3</a></li>
-          <li><a href="#part4">Part4</a></li>
-          <li><a href="#part5">Part5</a></li>
-          <li><a href="#part6">Part6</a></li>
+          <li><a href="#part1">Part 1</a></li>
+          <li><a href="#part2">Part 2</a></li>
+          <li><a href="#part3">Part 3</a></li>
+          <li><a href="#part4">Part 4</a></li>
+          <li><a href="#part5">Part 5</a></li>
+          <li><a href="#part6">Part 6</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <!-- Reusable Content Portion -->
+      <!-- Part 1 -->
+      <section id="part1" class="part">
+        <h2 data-title="part1">Default Title 1</h2>
+        <p data-body="part1">This is the default paragraph for part 1.</p>
+      </section>
+
+      <!-- Part 2 -->
+      <section id="part2" class="part">
+        <h2 data-title="part2">Default Title 2</h2>
+        <p data-body="part2">This is the default paragraph for part 2.</p>
+      </section>
+
+      <!-- Part 3 -->
+      <section id="part3" class="part">
+        <h2 data-title="part3">Default Title 3</h2>
+        <p data-body="part3">This is the default paragraph for part 3.</p>
+      </section>
+
+      <!-- Part 4 -->
+      <section id="part4" class="part">
+        <h2 data-title="part4">Default Title 4</h2>
+        <p data-body="part4">This is the default paragraph for part 4.</p>
+      </section>
+
+      <!-- Part 5 -->
+      <section id="part5" class="part">
+        <h2 data-title="part5">Default Title 5</h2>
+        <p data-body="part5">This is the default paragraph for part 5.</p>
+      </section>
+
+      <!-- Part 6 -->
+      <section id="part6" class="part">
+        <h2 data-title="part6">Default Title 6</h2>
+        <p data-body="part6">This is the default paragraph for part 6.</p>
+      </section>
     </main>
+
+    <script type="module" src="./js/main.js" defer></script>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Fellipe Scirea – COMP 2132 Template</p>
+    </footer>
   </body>
 </html>
