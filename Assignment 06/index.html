@@ -69,8 +69,9 @@
           <input type="text" id="lastName" name="lastName" required />
 
           <!-- StudentID & help button for student id required format-->
-          <label for="studentID"
-            >Student ID:
+          <label for="studentID">Student ID:</label>
+          <div class="field-with-icon">
+            <input type="text" name="studentID" id="studentID" />
             <button
               type="button"
               class="studentIdHelp"
@@ -78,14 +79,19 @@
             >
               ?
             </button>
-          </label>
-          <input type="text" name="studentID" id="studentID" />
+          </div>
 
           <!-- Password & show/hide button -->
-          <label for="password">password:</label>
-          <div>
-            <input type="text" id="password" name="password" required />
-            <button type="button" class="togglePassword">Show</button>
+          <label for="password">Password:</label>
+          <div class="field-with-icon">
+            <input type="password" id="password" name="password" required />
+            <button
+              type="button"
+              class="togglePassword"
+              aria-label="Show or hide password"
+            >
+              Show
+            </button>
           </div>
 
           <label for="date">Date:</label>

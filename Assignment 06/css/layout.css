@@ -80,3 +80,9 @@
     text-align: center;
   }
 }
+
+/* Form layout update */
+#part1 {
+  max-width: 650px;
+  margin-inline: auto;
+}

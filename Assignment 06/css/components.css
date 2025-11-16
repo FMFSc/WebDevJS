@@ -110,3 +110,140 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
+
+/* === Appointment Form Component === */
+
+#appointment-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  font: 16px Arial, sans-serif;
+
+  /* layout: 25% labels, 75% controls */
+  display: grid;
+  grid-template-columns: 25% 75%;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
+  align-items: center;
+}
+
+/* labels on the left, right aligned, with space for the ? button */
+#appointment-form label {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+/* all basic controls on the right column */
+#appointment-form input,
+#appointment-form select {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+}
+
+/* password row: input + Show button side by side */
+#appointment-form label[for="password"] + div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#appointment-form label[for="password"] + div input {
+  flex: 1;
+}
+
+/* small inline buttons ( ? and Show ) */
+.studentIdHelp,
+.togglePassword {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #b30000;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* submit row spans both columns */
+.submitButton {
+  grid-column: 1 / -1;
+  margin-top: 0.75rem;
+}
+
+/* submit button styling */
+.submitButton button {
+  padding: 0.45rem 1.2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #b30000;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* simple hover effect for all small buttons */
+.submitButton button:hover,
+.studentIdHelp:hover,
+.togglePassword:hover {
+  filter: brightness(1.05);
+}
+
+/* === Appointment Form Overrides (fix contrast) === */
+
+#appointment-form {
+  /* keep your layout and background, but force a dark text colour */
+  color: #111827; /* dark slate text for readability */
+  background-color: #f7f7f7; /* keep the light card look */
+  font: inherit; /* use global Inter font instead of Arial */
+}
+
+/* Button positioned within the input field */
+
+/* === Shared wrapper for inputs with an inline button (Student ID & Password) === */
+
+.field-with-icon {
+  position: relative;
+}
+
+/* Make room inside the input for the button on the right */
+.field-with-icon input {
+  padding-right: 2.5rem; /* adjust if text overlaps the button */
+}
+
+/* Common styles for small inline buttons */
+.field-with-icon .studentIdHelp,
+.field-with-icon .togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background-color: #e5e7eb;
+  padding: 0;
+  height: 1.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Specific sizing for each button */
+.field-with-icon .studentIdHelp {
+  width: 1.7rem;
+  font-size: 0.9rem;
+}
+
+/* "Show" text button: a bit wider */
+.field-with-icon .togglePassword {
+  padding-inline: 0.6rem;
+  font-size: 0.75rem;
+}
+
+/* Override the earlier flex layout for the password row */
+#appointment-form label[for="password"] + .field-with-icon {
+  display: block;
+}
