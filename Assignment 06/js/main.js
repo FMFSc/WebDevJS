@@ -33,17 +33,89 @@ let passwordField = document.getElementById('password');
 let togglePasswordButton = document.querySelector('.togglePassword');
 
 if (passwordField !== null && togglePasswordButton !== null) {
-togglePasswordButton.addEventListener('click', function () {
-    passwordField.type = (passwordField.type === 'password') ? 'text' : 'password';
-    togglePasswordButton.textContent = (passwordField.type === 'password') ? "Show" : "Hide";
-});
+    togglePasswordButton.addEventListener('click', function () {
+        passwordField.type = (passwordField.type === 'password') ? 'text' : 'password';
+        togglePasswordButton.textContent = (passwordField.type === 'password') ? "Show" : "Hide";
+    });
 
-// Set initial button text
-togglePasswordButton.textContent = (passwordField.type === 'password') ? "Show" : "Hide";
+    // Set initial button text
+    togglePasswordButton.textContent = (passwordField.type === 'password') ? "Show" : "Hide";
 }
 
 
 //Form validation against assignment criteria
 let appointmentForm = document.getElementById('appointment-form');
 
+//regex for student ID validation
+const studentNumberRegEx = /^a0[0-9]{7}$/i;
 
+//add event listener to the form submit event
+appointmentForm.addEventListener('submit', function (event) {
+    event.preventDefault(); //prevent form submission with default values
+
+    //data field values extraction
+    let firstName = document.getElementById('firstName');
+    let lastName = document.getElementById('lastName');
+    let password = document.getElementById('password');
+    let studentID = document.getElementById('studentID');
+    let courseSelection = document.getElementById('courseSelection');
+
+    //validation for all fields
+
+    //Assuming validation goes well
+    let formValid = true;
+
+    //if validation fails, set formValid to false and alert the user
+    if (firstName.value.trim() === '') {
+        formValid = false;
+        firstName.classList.add('input-error');
+        alert('Please enter your first name.');
+    } else {
+        firstName.classList.remove('input-error');
+    }
+
+    if (lastName.value.trim() === '') {
+        formValid = false;
+        lastName.classList.add('input-error');
+        alert('Please enter your last name.');
+    } else {
+        lastName.classList.remove('input-error');
+    }
+
+    if (password.value.trim() === '') {
+        formValid = false;
+        password.classList.add('input-error');
+        alert('Please enter your password.');
+    } else {
+        password.classList.remove('input-error');
+    }
+
+    if (studentID.value.trim() === '') {
+        formValid = false;
+        studentID.classList.add('input-error');
+        alert('Please enter your Student ID.');
+    } else if (!studentNumberRegEx.test(studentID.value.trim())) {
+        formValid = false;
+        studentID.classList.add('input-error');
+        alert('Please enter a valid Student ID in the format A0XXXXXX, where X is a digit.');
+    } else {
+        studentID.classList.remove('input-error');
+    }
+
+    if (courseSelection.value === '') {
+        formValid = false;
+        courseSelection.classList.add('input-error');
+        alert('Please select a course.');
+    } else {
+        courseSelection.classList.remove('input-error');
+    }
+
+    //if all validations pass, submit the form
+    //console.log("testing form validation", firstName, lastName, password, studentID, courseSelection);
+
+    if (formValid) {
+        appointmentForm.submit();
+    } else {
+        console.log("Form validation failed.");
+    }
+});

@@ -298,3 +298,10 @@
 .field-with-icon {
   position: relative;
 }
+
+/* Error styling for invalid form fields */
+.input-error {
+    border: 2px solid #b30000 !important;
+    background-color: #ffe6e6;
+}
+
