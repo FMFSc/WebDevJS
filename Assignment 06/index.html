@@ -59,7 +59,7 @@
           Please, feel free to schedule your appointment in person with one of
           our courses advisors.
         </p>
-        <form id="appointment-form" action="#" method="post">
+        <form id="appointment-form" action="thank-you.html" method="post">
           <!-- First name -->
           <label for="firstName">First Name:</label>
           <input type="text" id="firstName" name="firstName" required />
@@ -72,13 +72,27 @@
           <label for="studentID">Student ID:</label>
           <div class="field-with-icon">
             <input type="text" name="studentID" id="studentID" />
+
             <button
               type="button"
               class="studentIdHelp"
-              aria-label="Student ID Help Button"
+              aria-label="Student ID Help"
+              aria-expanded="false"
+              aria-controls="studentIdHelpText"
             >
               ?
             </button>
+
+            <div
+              id="studentIdHelpText"
+              class="tooltip"
+              role="tooltip"
+              hidden
+              aria-hidden="true"
+            >
+              The Student ID should be in the format A0XXXXXX, where X is a
+              digit.
+            </div>
           </div>
 
           <!-- Password & show/hide button -->
@@ -95,16 +109,22 @@
           </div>
 
           <label for="date">Date:</label>
-          <input type="date" id="date" name="date" required />
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value="YYYY-MM-DD"
+            required
+          />
 
           <label for="course">Course:</label>
           <select name="courseSelection" id="courseSelection">
             <option value="">Choose your course</option>
-            <option value="comp2132">
-              COMP 2132 - Web Development with JavaScript
-            </option>
-            <option value="comp2825">COMP 2825 - Computer Architecture</option>
-            <option value="general">General Appointment</option>
+            <option value="comp1850">COMP 1850</option>
+            <option value="comp2132">COMP 2132</option>
+            <option value="comp2913">COMP 2913</option>
+            <option value="comp3012">COMP 3012</option>
+            <option value="comp3015">COMP 3015</option>
           </select>
 
           <!-- Submit button -->
