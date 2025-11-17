@@ -114,6 +114,7 @@ appointmentForm.addEventListener('submit', function (event) {
     //console.log("testing form validation", firstName, lastName, password, studentID, courseSelection);
 
     if (formValid) {
+        console.log("Form validation successful.", appointmentForm.action);
         appointmentForm.submit();
     } else {
         console.log("Form validation failed.");
