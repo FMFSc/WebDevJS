@@ -63,7 +63,7 @@
 
   @media (min-width: 1024px) {
     main {
-      grid-template-columns: repeat(2, minmax(28rem, 1fr));
+      grid-template-columns: repeat(1, minmax(28rem, 1fr));
       justify-content: center; /* center the two-column block */
       gap: 1.25rem;
     }
