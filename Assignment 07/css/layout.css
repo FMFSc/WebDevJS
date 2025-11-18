@@ -79,4 +79,25 @@
     padding: 0 2rem 2rem;
     text-align: center;
   }
+
+  /* Product page layout */
+  .product-layout {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr); /* single column on small screens */
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .product-layout {
+      /* approx 60% gallery, 40% details */
+      grid-template-columns: 3fr 2fr;
+      align-items: flex-start;
+    }
+  }
+
+  .product-gallery,
+  .product-details {
+    width: 100%;
+  }
 }

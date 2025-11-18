@@ -40,7 +40,7 @@
       </div>
       <nav class="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="#part1">jQuery</a></li>
+          <li><a href="#part1">jQuery Product Page</a></li>
           <!-- <li><a href="#part2">Part 2</a></li>
           <li><a href="#part3">Part 3</a></li>
           <li><a href="#part4">Part 4</a></li>
@@ -52,36 +52,171 @@
 
     <main>
       <!-- Reusable Content Portion -->
-      <!-- Part 1 -->
       <section id="part1" class="part">
-        <h2 data-title="part1">Default Title 1</h2>
-        <!-- <p data-body="part1">This is the default paragraph for part 1.</p> -->
+        <h2 data-title="part1">Product: Cotton T-Shirt</h2>
 
-        <div class="product-images" id="product-images-gallery">
-          <!-- Images will be dynamically inserted here -->
-          <!-- expanding imaging container -->
-          <div class="image-container">
-            <span
-              onclick="this.parentElement.style.display = 'none'"
-              class="closebtn"
-              >&times;</span
-            >
-
-            <!-- Expanded image -->
-            <img id="expandedImage" style="width: 100%" />
-            <div id="image-caption"></div>
-          </div>
-
-          <!-- Thumbnails -->
-          <div class="row-images">
-            <div class="column">
+        <!-- Main product layout: gallery left (≈60%), details right (≈40%) -->
+        <div class="product-layout">
+          <!-- LEFT: image gallery -->
+          <section class="product-gallery" aria-label="Product images">
+            <figure class="product-main-image">
               <img
+                id="main-image"
                 src="./images/product-images/t-shirt-black-no-model.jpg"
-                alt="t-shirt-black-no-model"
-                onclick="myFunction(this);"
+                alt="Black cotton t-shirt, no model view"
               />
+            </figure>
+
+            <div class="product-thumbs" aria-label="Choose a view">
+              <!-- Each thumbnail has a data-view; colour will be handled via jQuery -->
+              <button
+                type="button"
+                class="thumb is-active"
+                data-view="no-model"
+              >
+                <img
+                  src="./images/product-images/t-shirt-black-no-model.jpg"
+                  alt="T-shirt without model view"
+                />
+              </button>
+
+              <button type="button" class="thumb" data-view="front">
+                <img
+                  src="./images/product-images/t-shirt-black-front.jpg"
+                  alt="T-shirt front view"
+                />
+              </button>
+
+              <button type="button" class="thumb" data-view="back">
+                <img
+                  src="./images/product-images/t-shirt-black-back.jpg"
+                  alt="T-shirt back view"
+                />
+              </button>
             </div>
-          </div>
+          </section>
+
+          <!-- RIGHT: product info + form -->
+          <section class="product-details">
+            <form
+              id="order-form"
+              class="product-form"
+              action="thank-you.html"
+              method="get"
+            >
+              <!-- price / quantity / total -->
+              <div class="product-summary">
+                <p>
+                  Price:
+                  <span id="unit-price" aria-label="Unit price">$20.00</span>
+                </p>
+
+                <label for="quantity">
+                  Quantity:
+                  <input
+                    id="quantity"
+                    name="quantity"
+                    type="number"
+                    min="1"
+                    value="1"
+                  />
+                </label>
+
+                <p>
+                  Total:
+                  <span id="total-price" aria-live="polite">$20.00</span>
+                </p>
+              </div>
+
+              <!-- colour selection -->
+              <div class="product-options">
+                <p class="selection-label">
+                  Color: <span id="color-name">black</span>
+                </p>
+
+                <fieldset class="option-group" id="color-options">
+                  <legend>Choose a colour</legend>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="color"
+                      id="color-black"
+                      value="black"
+                      checked
+                    />
+                    Black
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="color"
+                      id="color-red"
+                      value="red"
+                    />
+                    Red
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="color"
+                      id="color-grey"
+                      value="grey"
+                    />
+                    Grey
+                  </label>
+                </fieldset>
+
+                <!-- size selection -->
+                <p class="selection-label">
+                  Size: <span id="size-name">Choose...</span>
+                </p>
+
+                <fieldset class="option-group" id="size-options">
+                  <legend>Choose a size</legend>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="size"
+                      id="size-small"
+                      value="Small"
+                    />
+                    Small S
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="size"
+                      id="size-medium"
+                      value="Medium"
+                    />
+                    Medium M
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="size"
+                      id="size-large"
+                      value="Large"
+                    />
+                    Large L
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- submit button -->
+              <div class="product-actions">
+                <button type="submit" id="add-to-cart" class="btn" disabled>
+                  Choose A Size
+                </button>
+              </div>
+            </form>
+          </section>
         </div>
       </section>
 
