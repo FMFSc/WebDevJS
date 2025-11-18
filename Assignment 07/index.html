@@ -55,7 +55,34 @@
       <!-- Part 1 -->
       <section id="part1" class="part">
         <h2 data-title="part1">Default Title 1</h2>
-        <p data-body="part1">This is the default paragraph for part 1.</p>
+        <!-- <p data-body="part1">This is the default paragraph for part 1.</p> -->
+
+        <div class="product-images" id="product-images-gallery">
+          <!-- Images will be dynamically inserted here -->
+          <!-- expanding imaging container -->
+          <div class="image-container">
+            <span
+              onclick="this.parentElement.style.display = 'none'"
+              class="closebtn"
+              >&times;</span
+            >
+
+            <!-- Expanded image -->
+            <img id="expandedImage" style="width: 100%" />
+            <div id="image-caption"></div>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="row-images">
+            <div class="column">
+              <img
+                src="./images/product-images/t-shirt-black-no-model.jpg"
+                alt="t-shirt-black-no-model"
+                onclick="myFunction(this);"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Part 2 -->
