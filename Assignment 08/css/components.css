@@ -58,6 +58,12 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
+  /* Center Part 1 title */
+  h2[data-title="part1"] {
+    text-align: center;
+    margin: 0.5rem auto;
+  }
+
   /* buttons */
   .btn {
     display: inline-block;
@@ -109,4 +115,38 @@
     border-radius: 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
+}
+
+/* Product page - Gallery */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.animated-product-gallery {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(
+    circle at top,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 1)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-product-gallery img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.animation-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
 }

@@ -1,8 +1,15 @@
 <!--
  * @ Author: Fellipe M Fumagali Scirea
  * @ BCIT Student # : A01181350
+ * @ Created: 11-21-2025
+ * @ Description: COMP XXXX Assignment XX - Deliverable as part of coursework.
+ -->
+
+<!--
+ * @ Author: Fellipe M Fumagali Scirea
+ * @ BCIT Student # : A01181350
  * @ Create Time: 10-22-2025
- * @ Description: COMP 2132 Assignment XX - Deliverable as part of coursework.
+ * @ Description: COMP 2132 Assignment 08 - Deliverable as part of coursework.
  -->
 
 <!DOCTYPE html>
@@ -40,12 +47,12 @@
       </div>
       <nav class="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="#part1">Part 1</a></li>
-          <li><a href="#part2">Part 2</a></li>
+          <li><a href="#part1">Animations</a></li>
+          <!-- <li><a href="#part2">Part 2</a></li>
           <li><a href="#part3">Part 3</a></li>
           <li><a href="#part4">Part 4</a></li>
           <li><a href="#part5">Part 5</a></li>
-          <li><a href="#part6">Part 6</a></li>
+          <li><a href="#part6">Part 6</a></li> -->
         </ul>
       </nav>
     </header>
@@ -54,40 +61,73 @@
       <!-- Reusable Content Portion -->
       <!-- Part 1 -->
       <section id="part1" class="part">
-        <h2 data-title="part1">Default Title 1</h2>
-        <p data-body="part1">This is the default paragraph for part 1.</p>
+        <h2 data-title="part1">Bike Product: LTD Race</h2>
+
+        <!-- <p data-body="part1">This is the default paragraph for part 1.</p> -->
+
+        <!-- Image gallery with animation controls -->
+        <div id="product-gallery" class="product-gallery">
+          <section class="product-gallery" aria-label="Product images">
+            <figure class="animated-product-gallery">
+              <img
+                id="main-image"
+                src="./images/product-images/bike-1.jpg"
+                alt="LTD Race Bike"
+              />
+            </figure>
+
+            <div class="animation-buttons" aria-label="Choose an action">
+              <!-- button to start animation -->
+              <button type="button" class="start-animation"
+              data-view="start-animation">
+                Start
+              </button>
+
+              <!-- button to stop animation -->
+              <button type="button" class="stop-animation"
+              data-view="stop-animation">
+                Stop
+              </button>
+            </div>
+          </section>
+        </div>
       </section>
 
       <!-- Part 2 -->
-      <section id="part2" class="part">
+      <!-- <section id="part2" class="part">
         <h2 data-title="part2">Default Title 2</h2>
         <p data-body="part2">This is the default paragraph for part 2.</p>
-      </section>
+      </section> -->
 
       <!-- Part 3 -->
-      <section id="part3" class="part">
+      <!-- <section id="part3" class="part">
         <h2 data-title="part3">Default Title 3</h2>
         <p data-body="part3">This is the default paragraph for part 3.</p>
-      </section>
+      </section> -->
 
       <!-- Part 4 -->
-      <section id="part4" class="part">
+      <!-- <section id="part4" class="part">
         <h2 data-title="part4">Default Title 4</h2>
         <p data-body="part4">This is the default paragraph for part 4.</p>
-      </section>
+      </section> -->
 
       <!-- Part 5 -->
-      <section id="part5" class="part">
+      <!-- <section id="part5" class="part">
         <h2 data-title="part5">Default Title 5</h2>
         <p data-body="part5">This is the default paragraph for part 5.</p>
-      </section>
+      </section> -->
 
       <!-- Part 6 -->
-      <section id="part6" class="part">
+      <!-- <section id="part6" class="part">
         <h2 data-title="part6">Default Title 6</h2>
         <p data-body="part6">This is the default paragraph for part 6.</p>
-      </section>
+      </section> -->
     </main>
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      defer
+    ></script>
 
     <script type="module" src="./js/main.js" defer></script>
 
