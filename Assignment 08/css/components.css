@@ -150,3 +150,30 @@
   gap: 0.75rem;
   justify-content: center;
 }
+
+/* Delayed instruction popup */
+.rotation-popup {
+  position: fixed;
+  inset: 0;
+  display: none; /* start hidden, JS will show + fade it */
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.75);
+  opacity: 0;
+  z-index: 1000;
+}
+
+.rotation-popup-content {
+  background: var(--surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 320px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.rotation-popup .popup-close {
+  margin-top: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+}
