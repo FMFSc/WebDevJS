@@ -1,3 +1,4 @@
 
-# ignore zips
+# ignore zips & PDFs
 *.zip
+*.pdf
